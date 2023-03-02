@@ -1,0 +1,13 @@
+.form__icon {
+	position: absolute;
+	top: -10%;
+	right: -10%;
+}
+
+@media screen and (max-width: 320px) {
+	.form__icon {
+		position: absolute;
+		top: -15%;
+		right: 0;
+	}
+}
