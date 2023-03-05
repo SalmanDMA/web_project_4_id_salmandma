@@ -1,3 +1,13 @@
 .card__icon {
 	margin-right: 15px;
+	background: url('../../.././images/icon/heart.svg') no-repeat;
+	width: 21px;
+	height: 19px;
+}
+
+.toggle {
+	margin-right: 15px;
+	background: url('../../.././images/icon/heartBlack.svg') no-repeat;
+	width: 21px;
+	height: 19px;
 }

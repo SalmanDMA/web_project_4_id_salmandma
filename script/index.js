@@ -45,12 +45,13 @@ btnSaveForm.addEventListener('click', (event) => {
 });
 
 heartIcon.forEach((e) => {
-	e.addEventListener('click', () => {
-		const heartState = e.getAttribute('src');
-		if (heartState === './images/icon/heartBlack.svg') {
-			e.setAttribute('src', './images/icon/heart.svg');
-		} else {
-			e.setAttribute('src', './images/icon/heartBlack.svg');
-		}
+	e.addEventListener('click', (event) => {
+		// const heartState = e.getAttribute('src');
+		// if (heartState === './images/icon/heartBlack.svg') {
+		// 	e.setAttribute('src', './images/icon/heart.svg');
+		// } else {
+		// 	e.setAttribute('src', './images/icon/heartBlack.svg');
+		// }
+		event.target.classList.toggle('toggle');
 	});
 });
