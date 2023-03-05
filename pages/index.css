@@ -1,3 +1,7 @@
+/* normalize */
+@import url(../vendor/normalize.css);
+/* normalize */
+
 /* root */
 @import url(../blocks/root/root.css);
 /* root end */
