@@ -30,67 +30,50 @@
 		</section>
 
 		<div class="overlay"></div>
-		<div class="form">
+		<div class="form form-edit">
 			<button class="form__icon hover"></button>
 			<h3 class="form__header">Edit profil</h3>
 			<form class="form__control">
 				<input type="text" class="form__input form__name" />
 				<input type="text" class="form__input form__job" />
-				<button type="submit" class="form__button hover" aria-label="simpan">Simpan</button>
+				<button type="submit" class="form__button form__button-save hover" aria-label="simpan">Simpan</button>
+			</form>
+		</div>
+
+		<div class="overlay"></div>
+		<div class="form form-add">
+			<button class="form__icon hover-icon"></button>
+			<h3 class="form__header">Tempat Baru</h3>
+			<form class="form__control">
+				<input type="text" name="inputJudul" class="form__input form__name" placeholder="Judul" />
+				<input type="text" name="inputTautanGambar" class="form__input form__job" placeholder="Tautan gambar" />
+				<button type="submit" class="form__button form__button-create hover" aria-label="buat">Buat</button>
 			</form>
 		</div>
 
 		<main class="card">
-			<div class="card__item">
-				<img src="./images/card/1.jpg" alt="gambar lembah yoesmite" class="card__image" />
-				<div class="card__main-text">
-					<h3 class="card__title">Lembah Yosemite</h3>
-					<button class="card__icon hover-icon"></button>
+			<!-- penampilan 6 kartu di awal menggunakan template yang di atur di javascipt jadi tidak usah di definisikan satu satu-->
+			<template id="cardTemplate">
+				<div class="card__item">
+					<img src="./images/card/1.jpg" alt="gambar lembah yoesmite" class="card__image" />
+					<button class="card__icon-delete hover-icon"></button>
+					<div class="card__main-text">
+						<h3 class="card__title">Lembah Yosemite</h3>
+						<button class="card__icon hover-icon"></button>
+					</div>
 				</div>
-			</div>
-
-			<div class="card__item">
-				<img src="./images/card/2.jpg" alt="gambar Danau Louise" class="card__image" />
-				<div class="card__main-text">
-					<h3 class="card__title">Danau Louise</h3>
-					<button class="card__icon hover-icon"></button>
-				</div>
-			</div>
-
-			<div class="card__item">
-				<img src="./images/card/3.jpg" alt="gambar Pegunungan Bald" class="card__image" />
-				<div class="card__main-text">
-					<h3 class="card__title">Pegunungan Bald</h3>
-					<button class="card__icon hover-icon"></button>
-				</div>
-			</div>
-
-			<div class="card__item">
-				<img src="./images/card/4.jpg" alt="gambar Gunung Latemar" class="card__image" />
-				<div class="card__main-text">
-					<h3 class="card__title">Gunung Latemar</h3>
-					<button class="card__icon hover-icon"></button>
-				</div>
-			</div>
-
-			<div class="card__item">
-				<img src="./images/card/5.jpg" alt="gambar Vanoise Nationa" class="card__image" />
-				<div class="card__main-text">
-					<h3 class="card__title">Vanoise Nationa…</h3>
-					<button class="card__icon hover-icon"></button>
-				</div>
-			</div>
-
-			<div class="card__item">
-				<img src="./images/card/6.jpg" alt="gambar Lago di Braies" class="card__image" />
-				<div class="card__main-text">
-					<h3 class="card__title">Lago di Braies</h3>
-					<button class="card__icon hover-icon"></button>
-				</div>
-			</div>
+			</template>
 		</main>
 
+		<div class="overlay"></div>
+		<div class="pop-up">
+			<img class="pop-up__image" />
+			<button class="pop-up__icon hover-icon"></button>
+			<h3 class="pop-up__title"></h3>
+		</div>
+
 		<footer class="footer">
+			<p class="footer__copyright">Made by &hearts; Salman Dwi Maulana Akbar</p>
 			<p class="footer__copyright">&copy; 2021 Around The U.S.</p>
 		</footer>
 
