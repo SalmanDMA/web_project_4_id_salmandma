@@ -70,8 +70,11 @@ function showAlert() {
 	sectionProfile.before(alertContainer);
 
 	setTimeout(() => {
-		alertContainer.remove();
+		alertContainer.classList.add('close');
 	}, 3000);
+	setTimeout(() => {
+		alertContainer.remove();
+	}, 4000);
 }
 
 btnEditForm.addEventListener('click', showForm);
