@@ -1,16 +1,21 @@
-# Proyek 4: Di Sekitar Amerika Serikat
+# Proyek : Di Sekitar Amerika Serikat
 
-### Ringkasan
+1. **Deskripsi**
 
-* Figma
-* Gambar
+   Merupakan sebuah web yang dimana intinya adalah menambahkan sebuah gambar sesuai dengan inputan yang di kirim oleh user, yang awalnya menyediakan tampilan gambar kartu sebanyak 6 buah. Kemudian di bagian tombol tambah ada fitur validasi yang mana, user harus menginput sesuai ketentuan yang ada, jika tidak maka pesan error, dan tombol akan nonaktif. Selain itu juga user bisa mengganti nama dan pekerjaan yang bisa di klik di tombol edit dan juga memiliki fitur yang sama dengan tambah kartu. Dan yang paling penting web ini memiliki tampilan yang mudah di mengerti oleh orang-orang. Terakhir selamat mencoba semuanya 😊
 
-**Figma**
+2. **Teknologi**
 
-* [Tautan ke proyek di Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+   Teknologi yang digunakan untuk web ini menggunakan html, css, dan javascript murni. Kemudian untuk metodologi css menggunakan BEM _(Block Element Modifier)_.
 
-**Gambar**
+3. **Gambar**
 
-Cara Anda melakukannya di tempat kerja adalah dengan mengekspor gambar langsung dari Figma — kami menyarankan melakukan hal tersebut agar Anda berlatih lebih banyak. Jangan lupa untuk mengoptimalkannya [di sini](https://tinypng.com/), sehingga proyek Anda dapat dimuat dengan lebih cepat.
+   Detail Project :
 
-Selamat bersenang-senang dengan JavaScript!
+   ![alt text](images/project/detailProject.PNG 'Screenshot Project')
+
+4. **Github Pages**
+
+   [Tautan ke proyek (klik disini)](https://salmandma.github.io/web_project_4_id_salmandma)
+
+Selamat melihat dan bersenang-senang !
