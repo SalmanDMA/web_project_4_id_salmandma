@@ -9,3 +9,7 @@
 	display: none;
 	cursor: pointer;
 }
+
+.overlay.block {
+	display: block;
+}
