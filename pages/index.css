@@ -38,6 +38,8 @@
 
 /* form */
 @import url(../blocks/form/form.css);
+@import url(../blocks/form-add/form-add.css);
+@import url(../blocks/form-edit/form-edit.css);
 @import url(../blocks/form/__icon/form__icon.css);
 @import url(../blocks/form/__header/form__header.css);
 @import url(../blocks/form/__control/form__control.css);

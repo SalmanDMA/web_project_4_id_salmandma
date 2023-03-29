@@ -62,8 +62,9 @@ const enableValidation = (config) => {
 		setEventListeners(formElement, config);
 
 		formElement.addEventListener('keydown', (evt) => {
-			if (evt.keyCode === 27) {
-				closeForm();
+			const keyCode = 27;
+			if (evt.keyCode === keyCode) {
+				closeElement('form');
 			}
 		});
 	});

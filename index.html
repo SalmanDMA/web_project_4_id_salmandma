@@ -46,10 +46,10 @@
 		<div class="form form-add">
 			<button class="form__icon hover-icon"></button>
 			<h3 class="form__header">Tempat Baru</h3>
-			<form class="form__control" novalidate>
+			<form class="form__control" name="formAdd" novalidate>
 				<input id="text-input-tiga" type="text" name="inputJudul" class="form__input form__name" placeholder="Judul" required minlength="2" maxlength="30" />
 				<span class="text-input-tiga-error form__input-error"></span>
-				<input id="input-url" type="url" name="inputTautanGambar" class="form__input form__job" placeholder="Tautan gambar" />
+				<input id="input-url" type="url" name="inputTautanGambar" class="form__input form__job" placeholder="Tautan gambar" required />
 				<span class="input-url-error form__input-error"></span>
 				<button type="submit" class="form__button form__button-create hover" aria-label="buat">Buat</button>
 			</form>
