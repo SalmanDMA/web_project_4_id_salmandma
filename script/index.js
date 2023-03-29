@@ -30,9 +30,7 @@ function showElement(element) {
 		overlay.classList.add('block');
 		container.classList.add('block');
 
-		document.addEventListener('keydown', () => {
-			eventKeyCode(event);
-		});
+		document.addEventListener('keydown', keyDownListener);
 	} else {
 		overlay.classList.add('block');
 		formAdd.classList.add('block');
@@ -67,7 +65,7 @@ function closeElement(element) {
 		overlay.classList.remove('block');
 		container.classList.add('close');
 
-		document.removeEventListener('keydown', eventKeyCode);
+		document.removeEventListener('keydown', keyDownListener);
 
 		setTimeout(() => {
 			container.classList.remove('close');
@@ -120,6 +118,10 @@ function showAlertBox(element) {
 		}, 4000);
 	}
 }
+
+const keyDownListener = (event) => {
+	eventKeyCode(event);
+};
 
 function eventKeyCode(event) {
 	const keyCode = 27;
