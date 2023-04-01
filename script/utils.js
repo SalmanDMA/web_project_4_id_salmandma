@@ -1,4 +1,4 @@
-import { overlay, popup, sectionProfile, btnCloseForm, btnSaveForm, btnCreateForm, showElement, showAlertBox, closeElement, saveForm, valueInputJob, valueInputName, inputTitle } from './index.js';
+import { overlay, popup, sectionProfile, btnCloseForm, btnSaveForm, btnCreateForm, showElement, showAlertBox, closeElement, saveForm, valueInputJob, valueInputName, inputTitle, cardContainer } from './index.js';
 
 import { Card } from './card.js';
 
@@ -38,10 +38,9 @@ popup.addEventListener('click', (event) => {
 });
 
 btnCreateForm.addEventListener('click', (event) => {
- console.log('hi');
  event.preventDefault();
  card.addInitialCards();
- card.filteredCard();
+ card.setEventListenersFilterCard();
  showAlertBox(`Selamat data berhasil di tambahkan dengan judul ${inputTitle.value}`);
  closeElement('form');
 

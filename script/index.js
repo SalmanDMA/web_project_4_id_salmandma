@@ -14,6 +14,7 @@ const valueInputName = document.querySelector('.profile__title');
 const valueInputJob = document.querySelector('.profile__text');
 const popup = document.querySelector('.pop-up');
 const inputTitle = document.querySelector('input[name="inputJudul"]');
+const cardContainer = document.querySelector('.card');
 
 function showElement(element) {
  if (element === 'formEdit') {
@@ -127,4 +128,4 @@ forms.forEach((form) => {
  validator.enableValidation();
 });
 
-export { overlay, popup, sectionProfile, btnCloseForm, btnSaveForm, btnCreateForm, showElement, showAlertBox, closeElement, saveForm, valueInputJob, valueInputName, inputTitle };
+export { overlay, popup, sectionProfile, btnCloseForm, btnSaveForm, btnCreateForm, showElement, showAlertBox, closeElement, saveForm, valueInputJob, valueInputName, inputTitle, cardContainer };

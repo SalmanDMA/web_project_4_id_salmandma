@@ -25,10 +25,6 @@ const items = [
   name: 'Lago di Braies',
   link: 'https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg',
  },
- {
-  name: undefined,
-  link: undefined,
- },
 ];
 
 class Card {
@@ -66,21 +62,20 @@ class Card {
   return this._cardElement;
  }
 
- _handleDeleteCard(event) {
-  event.target.closest('.card__item').remove();
+ _handleDeleteCard() {
+  this._cardElement.remove();
  }
 
- _handleLikeCard(event) {
-  event.target.closest('.card__icon').classList.toggle('toggle');
+ _handleLikeCard() {
+  this._cardElement.querySelector('.card__icon').classList.toggle('toggle');
  }
 
  _setEventListeners() {
-  this._card.addEventListener('click', (event) => {
+  this._cardElement.addEventListener('click', (event) => {
    if (event.target.classList.contains('card__icon-delete')) {
-    this._handleDeleteCard(event);
+    this._handleDeleteCard();
    } else if (event.target.classList.contains('card__icon')) {
-    this._handleLikeCard(event);
-    console.log();
+    this._handleLikeCard();
    } else if (event.target.classList.contains('card__image')) {
     showElement('popUp');
    } else {
@@ -89,7 +84,7 @@ class Card {
   });
  }
 
- filteredCard() {
+ _filteredCard() {
   const newInputCard = this._inputTitle.value;
   const filterCard = items.filter((item) => item.name === newInputCard);
 
@@ -122,6 +117,30 @@ class Card {
   const referenceNode = this._card.firstChild;
 
   this._card.insertBefore(newCardContainer, referenceNode);
+
+  const newCardElements = {
+   btnHeart: newCardBtnHeart,
+   image: newCardImage,
+   btnDelete: newCardBtn,
+  };
+
+  return newCardElements;
+ }
+
+ setEventListenersFilterCard() {
+  const newCardElements = this._filteredCard();
+
+  newCardElements.btnHeart.addEventListener('click', () => {
+   newCardElements.btnHeart.classList.toggle('toggle');
+  });
+
+  newCardElements.image.addEventListener('click', () => {
+   showElement('popUp');
+  });
+
+  newCardElements.btnDelete.addEventListener('click', () => {
+   newCardElements.btnDelete.parentElement.remove();
+  });
  }
 }
 
