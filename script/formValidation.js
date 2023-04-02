@@ -62,7 +62,7 @@ class FormValidator {
 
   this._setEventListeners();
 
-  this._formElement.addEventListener('keydown', (evt) => {
+  document.addEventListener('keydown', (evt) => {
    const keyCode = 27;
    if (evt.keyCode === keyCode) {
     closeElement('form');
