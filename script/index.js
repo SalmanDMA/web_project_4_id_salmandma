@@ -22,13 +22,14 @@ function showElement(element) {
   formEdit.classList.add('block');
   inputName.value = valueInputName.textContent;
   inputJob.value = valueInputJob.textContent;
-  if(inputName.classList.contains("form__input_type_error") && inputJob.classList.contains("form__input_type_error") && document.querySelector("span").classList.contains('form__input-error_active')
-   ){
-    console.log('hi')
-    inputName.classList.remove("form__input_type_error")
-    inputJob.classList.remove("form__input_type_error")
-    document.querySelector('span').classList.remove('form__input-error_active')
-   }
+  inputName.classList.remove("form__input_type_error")
+  inputJob.classList.remove("form__input_type_error")
+  const span = document.querySelectorAll('form[name="formEdit"] span');
+  span.forEach((item) => {
+    console.log(item);
+    item.classList.remove('form__input-error_active')
+  })
+   
  } else if (element === 'popUp') {
   const popUpImage = document.querySelector('.pop-up__image');
   const srcImg = event.target.src;
