@@ -21,7 +21,7 @@
 
    Detail Project :
 
-   ![alt text](images/project/detailProject.PNG 'Screenshot Project')
+   ![alt text](src/images/project/detailProject.PNG 'Screenshot Project')
 
 4. **Github Pages**
 
