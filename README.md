@@ -6,7 +6,16 @@
 
 2. **Teknologi**
 
-   Teknologi yang digunakan untuk web ini menggunakan html, css, dan javascript murni. Kemudian untuk metodologi css menggunakan BEM _(Block Element Modifier)_. Kemudian untuk javascriptnya menggunakan tipe modul dan paradigma OOP _(Object Oriented Programming)_.
+   Teknologi yang digunakan untuk web ini menggunakan html, css, dan javascript murni.
+
+   Rinciannya sebagai berikut :
+
+   - Flexbox
+   - BEM methodology
+   - Media queries untuk responsive
+   - Menggunakan DOM untuk mengedit page content
+   - OOP
+   - Webpack bundling
 
 3. **Gambar**
 
