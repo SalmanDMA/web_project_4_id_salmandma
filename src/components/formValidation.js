@@ -1,6 +1,4 @@
-import { closeElement } from '../pages/index.js';
-
-class FormValidator {
+export default class FormValidator {
  constructor(config, formElement) {
   this._config = config;
   this._formElement = formElement;
@@ -52,6 +50,10 @@ class FormValidator {
     this._isValid(inputElement);
     this._toggleButtonState();
    });
+
+   inputElement.addEventListener('reset', () => {
+    this._hideInputError(inputElement);
+   });
   });
  }
 
@@ -64,20 +66,11 @@ class FormValidator {
  }
 
  enableValidation() {
-  this._setSubmitEventListeners();
-  this._toggleButtonState();
+  const forms = Array.from(document.querySelectorAll(this._config.formSelector));
+  forms.forEach((formElement) => {
+   const validator = new FormValidator(this._config, formElement);
+   validator._setSubmitEventListeners();
+   validator._toggleButtonState();
+  });
  }
 }
-
-const data = {
- formSelector: '.form',
- inputSelector: '.form__input',
- submitButtonSelector: '.form__button',
- inactiveButtonClass: 'form__button_inactive',
- inputErrorClass: 'form__input_type_error',
- errorClass: 'form__input-error_active',
-};
-
-const forms = Array.from(document.querySelectorAll(data.formSelector));
-
-export { forms, FormValidator, data };

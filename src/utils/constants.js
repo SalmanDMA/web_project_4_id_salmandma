@@ -25,6 +25,15 @@ const items = [
  },
 ];
 
+const data = {
+ formSelector: '.form',
+ inputSelector: '.form__input',
+ submitButtonSelector: '.form__button',
+ inactiveButtonClass: 'form__button_inactive',
+ inputErrorClass: 'form__input_type_error',
+ errorClass: 'form__input-error_active',
+};
+
 const sectionProfile = document.querySelector('.profile');
 const inputName = document.querySelector('.form__name');
 const inputJob = document.querySelector('.form__job');
@@ -37,4 +46,4 @@ const imagePopupSelector = document.querySelector('.pop-up');
 const editProfilePopupSelector = document.querySelector('.form-edit');
 const addNewCardPopupSelector = document.querySelector('.form-add');
 
-export { items, sectionProfile, inputName, inputJob, valueInputName, valueInputJob, cardContainer, imagePopupSelector, editProfilePopupSelector, addNewCardPopupSelector, buttonEditProfile, buttonNewCard };
+export { items, sectionProfile, inputName, inputJob, valueInputName, valueInputJob, cardContainer, imagePopupSelector, editProfilePopupSelector, addNewCardPopupSelector, buttonEditProfile, buttonNewCard, data };

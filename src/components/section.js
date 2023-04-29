@@ -12,7 +12,7 @@ export default class Section {
  }
 
  addItem(element, top) {
-  if (top === true) {
+  if (top) {
    this._container.prepend(element);
   } else {
    this._container.append(element);
