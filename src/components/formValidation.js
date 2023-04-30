@@ -55,6 +55,12 @@ export default class FormValidator {
     this._hideInputError(inputElement);
    });
   });
+
+  this._formElement.addEventListener('reset', () => {
+   this._inputList.forEach((inputElement) => {
+    this._hideInputError(inputElement);
+   });
+  });
  }
 
  _setSubmitEventListeners() {
@@ -66,11 +72,7 @@ export default class FormValidator {
  }
 
  enableValidation() {
-  const forms = Array.from(document.querySelectorAll(this._config.formSelector));
-  forms.forEach((formElement) => {
-   const validator = new FormValidator(this._config, formElement);
-   validator._setSubmitEventListeners();
-   validator._toggleButtonState();
-  });
+  this._setSubmitEventListeners();
+  this._toggleButtonState();
  }
 }

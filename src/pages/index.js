@@ -89,5 +89,10 @@ sectionProfile.addEventListener('click', (event) => {
 editProfilePopup.setEventListeners();
 addNewCardPopup.setEventListeners();
 
-const validator = new FormValidator(data, document.querySelector(data.formSelector));
-validator.enableValidation();
+const forms = Array.from(document.querySelectorAll(data.formSelector));
+
+forms.forEach((formElement) => {
+ const validator = new FormValidator(data, formElement);
+
+ validator.enableValidation();
+});
