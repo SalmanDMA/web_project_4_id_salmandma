@@ -24,7 +24,8 @@ export default class AlertBox {
    this.alertContainer.classList.add('close');
   }, 3000);
   setTimeout(() => {
+   this.alertContainer.classList.remove('close');
    this.alertContainer.remove();
-  }, 4500);
+  }, 4000);
  }
 }
