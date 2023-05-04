@@ -50,10 +50,6 @@ export default class FormValidator {
     this._isValid(inputElement);
     this._toggleButtonState();
    });
-
-   inputElement.addEventListener('reset', () => {
-    this._hideInputError(inputElement);
-   });
   });
 
   this._formElement.addEventListener('reset', () => {
