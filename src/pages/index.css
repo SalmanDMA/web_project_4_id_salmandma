@@ -60,7 +60,9 @@
 @import url(../blocks/card/__icon-delete/card__icon-delete.css);
 @import url(../blocks/card/__main-text/card__main-text.css);
 @import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__likes/card__likes.css);
 @import url(../blocks/card/__icon/card__icon.css);
+@import url(../blocks/card/__likes-text/card__likes-text.css);
 /* card end */
 
 /* popup image */

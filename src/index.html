@@ -14,13 +14,13 @@
 
   <section class="profile">
    <div class="profile__avatar">
-    <img src="<%= require('./images/profile/image.jpg') %>" alt="profile picture" class="profile__image" />
+    <img alt="profile picture" class="profile__image" />
     <div class="profile__info">
      <div class="profile__header">
-      <h2 class="profile__title">Jacques Cousteau</h2>
+      <h2 class="profile__title"></h2>
       <button class="hover-icon profile__edit"></button>
      </div>
-     <p class="profile__text">Penjelajah</p>
+     <p class="profile__text"></p>
     </div>
    </div>
 
@@ -62,7 +62,10 @@
      <button class="card__icon-delete hover-icon"></button>
      <div class="card__main-text">
       <h3 class="card__title"></h3>
-      <button class="card__icon hover-icon"></button>
+      <div class="card__likes">
+       <button class="card__icon hover-icon"></button>
+       <p class="card__likes-text"></p>
+      </div>
      </div>
     </div>
    </template>
