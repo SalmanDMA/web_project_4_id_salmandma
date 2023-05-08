@@ -77,10 +77,10 @@
 @import url(../blocks/pop-up/__icon/pop-up__icon.css);
 @import url(../blocks/pop-up/__title/pop-up__title.css);
 @import url(../blocks/form-confirm-container/form-confirm-container.css);
-@import url(../blocks/form-confirm-container/__icon/form-confirm__icon.css);
-@import url(../blocks/form-confirm-container/__title/form-confirm__title.css);
-@import url(../blocks/form-confirm-container/__button/form-confirm__button.css);
-@import url(../blocks/form-confirm-container/__content/form-confirm__content.css);
+@import url(../blocks/form-confirm-container/__icon/form-confirm-container__icon.css);
+@import url(../blocks/form-confirm-container/__title/form-confirm-container__title.css);
+@import url(../blocks/form-confirm-container/__button/form-confirm-container__button.css);
+@import url(../blocks/form-confirm-container/__content/form-confirm-container__content.css);
 /* popup image end */
 
 /* footer */

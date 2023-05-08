@@ -1,4 +1,4 @@
-.form-confirm__icon {
+.form-confirm-container__icon {
  position: absolute;
  top: -18%;
  right: -7%;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 320px) {
- .form-confirm__icon {
+ .form-confirm-container__icon {
   position: absolute;
   background-size: cover;
   top: -8%;
