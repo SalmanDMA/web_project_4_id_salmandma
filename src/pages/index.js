@@ -6,9 +6,11 @@ import {
  inputJob,
  valueInputName,
  valueInputJob,
- profileImage,
  cardContainer,
  imagePopupSelector,
+ popupWithConfirmSelector,
+ avatarSelector,
+ popupAvatarSelector,
  editProfilePopupSelector,
  addNewCardPopupSelector,
  buttonEditProfile,
@@ -22,6 +24,7 @@ import PopupWithForm from '../components/popupWithForm.js';
 import UserInfo from '../components/userInfo.js';
 import AlertBox from '../components/alertBox.js';
 import Api from '../components/api.js';
+import PopupWithConfirm from '../components/popupWithConfirm.js';
 
 // classes
 const api = new Api({
@@ -32,13 +35,17 @@ const api = new Api({
  },
 });
 
-const profileInfo = new UserInfo(valueInputName, valueInputJob, profileImage);
+const profileInfo = new UserInfo(valueInputName, valueInputJob, avatarSelector);
 
 const editProfilePopup = new PopupWithForm(editProfilePopupSelector, editProfileSubmitHandler);
 
 const addNewCardPopup = new PopupWithForm(addNewCardPopupSelector, addCardSubmitHandler);
 
+const editAvatarPopup = new PopupWithForm(popupAvatarSelector, editAvatarSubmitHandler);
+
 const popupImage = new PopupWithImage(imagePopupSelector);
+
+const popupConfirm = new PopupWithConfirm(popupWithConfirmSelector, deleteCardSubmitHandler);
 
 const cardList = new Section(
  {
@@ -60,13 +67,30 @@ const alertBoxNewCard = new AlertBox({
  alertText: 'h3',
 });
 
+const alertEditAvatar = new AlertBox({
+ sectionProfile: sectionProfile,
+ alertContainer: 'section',
+ alertText: 'h3',
+});
+
+const alertDeleteCard = new AlertBox({
+ sectionProfile: sectionProfile,
+ alertContainer: 'section',
+ alertText: 'h3',
+});
+
 // function
 
 function editProfileSubmitHandler(data) {
+ console.log(editProfilePopup.showPatchStatus(true));
+ editProfilePopup.showPatchStatus(true);
  api
   .patchUserInfo(data)
   .then(() => {
    profileInfo.setUserInfo(data);
+  })
+  .then(() => {
+   editProfilePopup.showPatchStatus(false);
   })
   .then(() => {
    alertBoxUserInfo.generateAlertBox(`Selamat perubahan data ${data.inputName} dan ${data.inputJob} telah berhasil !!!`);
@@ -76,6 +100,31 @@ function editProfileSubmitHandler(data) {
   })
   .catch((err) => {
    console.log(err);
+   editProfilePopup.showPatchStatus(false);
+  });
+}
+
+function editAvatarSubmitHandler(data) {
+ console.log(editAvatarPopup);
+ console.log(editAvatarPopup.showPatchStatus(true));
+ editAvatarPopup.showPatchStatus(true);
+ api
+  .patchAvatarUser(data.inputAvatar)
+  .then(() => {
+   profileInfo.setUserAvatar(data.inputAvatar);
+  })
+  .then(() => {
+   editAvatarPopup.showPatchStatus(false);
+  })
+  .then(() => {
+   alertEditAvatar.generateAlertBox(`Selamat perubahan foto profil dari ${data.inputAvatar} telah berhasil !!!`);
+  })
+  .then(() => {
+   editAvatarPopup.close();
+  })
+  .catch((err) => {
+   editAvatarPopup.showPatchStatus(false);
+   console.log(err);
   });
 }
 
@@ -84,12 +133,9 @@ function handleCardClick(items) {
 }
 
 function handleLikeClick(card, cardId, isLiked) {
- console.log(isLiked);
- console.log(card._likes);
  api
   .updateLikeCard(cardId, isLiked)
   .then((data) => {
-   console.log(data.likes);
    card._likes = data.likes;
   })
   .catch((err) => {
@@ -97,18 +143,41 @@ function handleLikeClick(card, cardId, isLiked) {
   });
 }
 
+function openPopupConfirm(cardElement, cardId, cardName) {
+ popupConfirm.open(cardElement, cardId, cardName);
+}
+
+function deleteCardSubmitHandler(cardElement, cardId, cardName) {
+ api
+  .deleteCard(cardId)
+  .then(() => {
+   popupConfirm.close();
+   cardElement.remove();
+  })
+  .then(() => {
+   alertDeleteCard.generateAlertBox(`Selamat card ${cardName} telah dihapus !!!`);
+  })
+  .catch((err) => {
+   console.log(err);
+  });
+}
+
 function makeNewCard(data, userId) {
- const cardItem = new Card(data, userId, handleCardClick, handleLikeClick);
+ const cardItem = new Card(data, userId, handleCardClick, handleLikeClick, openPopupConfirm);
  const cardElement = cardItem.generateCard();
 
  return cardElement;
 }
 
 function addCardSubmitHandler(data) {
+ addNewCardPopup.showPatchStatus(true);
  api
   .postNewCard(data)
   .then((data) => {
    cardList.addItem(makeNewCard(data, data.owner._id), true);
+  })
+  .then(() => {
+   addNewCardPopup.showPatchStatus(false);
   })
   .then(() => {
    alertBoxNewCard.generateAlertBox(`Selamat data berhasil di tambahkan dengan judul ${data.inputJudul}`);
@@ -118,6 +187,7 @@ function addCardSubmitHandler(data) {
   })
   .catch((err) => {
    console.log(err);
+   addNewCardPopup.showPatchStatus(false);
   });
 }
 
@@ -130,7 +200,7 @@ api
   });
   valueInputName.textContent = userInfo.name;
   valueInputJob.textContent = userInfo.about;
-  profileImage.src = userInfo.avatar;
+  avatarSelector.src = userInfo.avatar;
  })
  .catch((err) => {
   console.log(err);
@@ -151,8 +221,13 @@ sectionProfile.addEventListener('click', (event) => {
  }
 });
 editProfilePopup.setEventListeners();
+avatarSelector.addEventListener('click', () => {
+ editAvatarPopup.open();
+});
+editAvatarPopup.setEventListeners();
 popupImage.setEventListeners();
 addNewCardPopup.setEventListeners();
+popupConfirm.setEventListeners();
 
 // forms Validation
 const forms = Array.from(document.querySelectorAll(data.formSelector));

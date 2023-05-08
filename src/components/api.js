@@ -54,8 +54,19 @@ class Api {
   if (res.ok) {
    return res.json();
   }
-  console.log(res);
   return Promise.reject(`Error: ${res.status} `);
+ }
+
+ async deleteCard(cardId) {
+  const res = await fetch(`${this.baseUrl}/cards/${cardId}`, {
+   method: 'DELETE',
+   headers: this.headers,
+  });
+
+  if (res.ok) {
+   return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
  }
 
  async patchUserInfo(data) {
@@ -72,6 +83,21 @@ class Api {
    return res.json();
   }
 
+  return Promise.reject(`Error: ${res.status}`);
+ }
+
+ async patchAvatarUser(url) {
+  const res = await fetch(`${this.baseUrl}/users/me/avatar`, {
+   method: 'PATCH',
+   headers: this.headers,
+   body: JSON.stringify({
+    avatar: url,
+   }),
+  });
+
+  if (res.ok) {
+   return res.json();
+  }
   return Promise.reject(`Error: ${res.status}`);
  }
 }

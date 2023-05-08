@@ -5,3 +5,17 @@
  object-fit: cover;
  object-position: center;
 }
+
+@media screen and (max-width: 900px) {
+ .profile__image {
+  width: 150px;
+  height: 150px;
+ }
+}
+
+@media screen and (max-width: 320px) {
+ .profile__image {
+  width: 100px;
+  height: 100px;
+ }
+}

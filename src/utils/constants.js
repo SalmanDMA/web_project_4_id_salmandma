@@ -12,12 +12,30 @@ const inputName = document.querySelector('.form__name');
 const inputJob = document.querySelector('.form__job');
 const valueInputName = document.querySelector('.profile__title');
 const valueInputJob = document.querySelector('.profile__text');
-const profileImage = document.querySelector('.profile__image');
+const avatarSelector = document.querySelector('.profile__image');
 const buttonEditProfile = document.querySelector('.form__button-save');
 const buttonNewCard = document.querySelector('.form__button-create');
 const cardContainer = document.querySelector('.card');
 const imagePopupSelector = document.querySelector('.pop-up');
 const editProfilePopupSelector = document.querySelector('.form-edit');
 const addNewCardPopupSelector = document.querySelector('.form-add');
+const popupWithConfirmSelector = document.querySelector('.pop-up__confirm');
+const popupAvatarSelector = document.querySelector('.form-avatar');
 
-export { sectionProfile, inputName, inputJob, valueInputName, valueInputJob, profileImage, cardContainer, imagePopupSelector, editProfilePopupSelector, addNewCardPopupSelector, buttonEditProfile, buttonNewCard, data };
+export {
+ sectionProfile,
+ inputName,
+ inputJob,
+ valueInputName,
+ valueInputJob,
+ avatarSelector,
+ cardContainer,
+ imagePopupSelector,
+ popupWithConfirmSelector,
+ popupAvatarSelector,
+ editProfilePopupSelector,
+ addNewCardPopupSelector,
+ buttonEditProfile,
+ buttonNewCard,
+ data,
+};

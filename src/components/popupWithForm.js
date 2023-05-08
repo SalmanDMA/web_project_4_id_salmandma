@@ -16,6 +16,18 @@ export default class PopupWithForm extends Popup {
   return inputValues;
  }
 
+ showPatchStatus(status) {
+  const submitButtons = this._formSelector.querySelectorAll('.form__button');
+  submitButtons.forEach((button) => {
+   if (status) {
+    button.textContent = 'Menyimpan...';
+   } else {
+    button.textContent = this._submitButtonValue;
+   }
+  });
+  return this;
+ }
+
  setEventListeners() {
   super.setEventListeners();
   this._formSelector.addEventListener('submit', (event) => {

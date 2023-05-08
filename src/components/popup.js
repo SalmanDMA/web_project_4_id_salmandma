@@ -30,7 +30,7 @@ export default class Popup {
 
  setEventListeners() {
   this._popup.addEventListener('click', (event) => {
-   if (event.target.classList.contains('pop-up__icon') || event.target.classList.contains('form__icon')) {
+   if (event.target.classList.contains('pop-up__icon') || event.target.classList.contains('form__icon') || event.target.classList.contains('pop-up__icon-confirm')) {
     this.close();
    }
   });

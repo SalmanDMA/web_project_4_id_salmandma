@@ -2,7 +2,7 @@
 
 1. **Deskripsi**
 
-   Merupakan sebuah web yang dimana intinya adalah menambahkan sebuah gambar sesuai dengan inputan yang di kirim oleh user, yang awalnya menyediakan tampilan gambar kartu sebanyak 6 buah. Kemudian di bagian tombol tambah ada fitur validasi yang mana, user harus menginput sesuai ketentuan yang ada, jika tidak maka pesan error, dan tombol akan nonaktif. Selain itu juga user bisa mengganti nama dan pekerjaan yang bisa di klik di tombol edit dan juga memiliki fitur yang sama dengan tambah kartu. Dan yang paling penting web ini memiliki tampilan yang mudah di mengerti oleh orang-orang. Terakhir selamat mencoba semuanya 😊
+   Website di sekitar amerika serikat merupakan sebuah salah satu project yang di berikan oleh Practicum, sederhananya fungsi yang ada di website ini adalah menambahkan sebuah kartu, menghapus kartu, menambah like sesuai dengan pengguna, mengganti gambar, nama serta job oleh user, jangan lupa di cek hasilnya di link yang sudah di sediakan dan selamat menikmati😊
 
 2. **Teknologi**
 
@@ -16,6 +16,7 @@
    - Menggunakan DOM untuk mengedit page content
    - OOP
    - Webpack bundling
+   - API calls and asynchronous functions
 
 3. **Gambar**
 

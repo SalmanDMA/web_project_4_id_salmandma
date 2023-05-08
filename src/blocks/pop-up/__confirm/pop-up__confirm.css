@@ -1,0 +1,17 @@
+.pop-up__confirm {
+ position: fixed;
+ display: none;
+ z-index: 5;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ background-color: #fff;
+ width: 430px;
+ height: 181px;
+ box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+ border-radius: 10px;
+}
+
+.pop-up__confirm.block {
+ display: block;
+}

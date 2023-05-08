@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Around US</title>
-  <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
  </head>
  <body class="root">
   <header class="header">
@@ -14,7 +13,10 @@
 
   <section class="profile">
    <div class="profile__avatar">
-    <img alt="profile picture" class="profile__image" />
+    <div class="profile__edit-avatar">
+     <button type="button" aria-label="edit avatar" class="profile__button-avatar"></button>
+     <img alt="profile picture" class="profile__image" />
+    </div>
     <div class="profile__info">
      <div class="profile__header">
       <h2 class="profile__title"></h2>
@@ -42,7 +44,6 @@
    </form>
   </div>
 
-  <div class="overlay"></div>
   <div class="form form-add">
    <button class="form__icon hover-icon"></button>
    <h3 class="form__header">Tempat Baru</h3>
@@ -71,19 +72,35 @@
    </template>
   </main>
 
-  <div class="overlay"></div>
   <div class="pop-up">
    <img class="pop-up__image" />
    <button class="pop-up__icon hover-icon"></button>
    <h3 class="pop-up__title"></h3>
   </div>
 
+  <div class="pop-up__confirm">
+   <button type="button" class="pop-up__icon-confirm hover-icon"></button>
+   <div class="pop-up__confirm-content">
+    <h3 class="pop-up__title-confirm">Apakah Anda Yakin ?</h3>
+    <form action="POST" class="form-confirm">
+     <button type="submit" class="form__button pop-up__button-confirm hover-icon" aria-label="Ya">Ya</button>
+    </form>
+   </div>
+  </div>
+
+  <div class="form form-avatar">
+   <button type="button" class="form__icon hover-icon"></button>
+   <h3 class="pop-up__title-avatar">Ubah Foto Profil</h3>
+   <form action="POST" class="form__control" name="formAvatar" novalidate>
+    <input id="input-url-avatar" name="inputAvatar" type="url" class="form__input form__avatar" placeholder="Isi link disini..." required />
+    <span class="input-url-avatar-error form__input-error form__input-avatar"></span>
+    <button type="submit" class="form__button form__button-avatar hover" aria-label="Simpan">Simpan</button>
+   </form>
+  </div>
+
   <footer class="footer">
    <p class="footer__copyright">Made by &hearts; Salman Dwi Maulana Akbar</p>
    <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
   </footer>
-
-  <!-- <script type="module" src="./script/index.js"></script>
-  <script type="module" src="./script/utils.js"></script> -->
  </body>
 </html>

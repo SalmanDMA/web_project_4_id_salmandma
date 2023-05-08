@@ -1,8 +1,8 @@
 export default class UserInfo {
- constructor(nameSelector, jobselector, avatar) {
+ constructor(nameSelector, jobselector, avatarSeclector) {
   this._name = nameSelector;
   this._job = jobselector;
-  this.avatar = avatar;
+  this._avatar = avatarSeclector;
  }
 
  getUserInfo() {
@@ -17,7 +17,7 @@ export default class UserInfo {
   this._job.textContent = data.inputJob;
  }
 
- setUserAvatar(data) {
-  this._avatar.src = data;
+ setUserAvatar(avatar) {
+  this._avatar.src = avatar;
  }
 }
