@@ -1,4 +1,4 @@
-.pop-up-confirm {
+.form-confirm-container {
  position: fixed;
  display: none;
  z-index: 5;
@@ -12,6 +12,6 @@
  border-radius: 10px;
 }
 
-.pop-up-confirm.block {
+.form-confirm-container.block {
  display: block;
 }
