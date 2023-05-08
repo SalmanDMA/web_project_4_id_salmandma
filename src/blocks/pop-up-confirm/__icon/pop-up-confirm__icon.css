@@ -1,4 +1,4 @@
-.pop-up__icon-confirm {
+.pop-up-confirm__icon {
  position: absolute;
  top: -18%;
  right: -7%;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 320px) {
- .pop-up__icon-confirm {
+ .pop-up-confirm__icon {
   position: absolute;
   background-size: cover;
   top: -8%;

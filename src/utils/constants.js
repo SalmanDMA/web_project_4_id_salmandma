@@ -19,7 +19,7 @@ const cardContainer = document.querySelector('.card');
 const imagePopupSelector = document.querySelector('.pop-up');
 const editProfilePopupSelector = document.querySelector('.form-edit');
 const addNewCardPopupSelector = document.querySelector('.form-add');
-const popupWithConfirmSelector = document.querySelector('.pop-up__confirm');
+const popupWithConfirmSelector = document.querySelector('.pop-up-confirm');
 const popupAvatarSelector = document.querySelector('.form-avatar');
 
 export {
