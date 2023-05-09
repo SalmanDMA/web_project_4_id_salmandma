@@ -48,7 +48,6 @@ class Card {
     _id: this._userId,
     name: this._card.owner.name,
    });
-   console.log(this._likes);
    this._cardLikes.textContent = this._likes.length;
   } else {
    const index = this._likes.findIndex((like) => like._id === this._userId);

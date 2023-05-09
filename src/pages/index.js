@@ -82,7 +82,6 @@ const alertDeleteCard = new AlertBox({
 // function
 
 function editProfileSubmitHandler(data) {
- console.log(editProfilePopup.showPatchStatus(true));
  editProfilePopup.showPatchStatus(true);
  api
   .patchUserInfo(data)
@@ -91,22 +90,16 @@ function editProfileSubmitHandler(data) {
   })
   .then(() => {
    editProfilePopup.showPatchStatus(false);
-  })
-  .then(() => {
+   editProfilePopup.close();
    alertBoxUserInfo.generateAlertBox(`Selamat perubahan data ${data.inputName} dan ${data.inputJob} telah berhasil !!!`);
   })
-  .then(() => {
-   editProfilePopup.close();
-  })
   .catch((err) => {
-   console.log(err);
+   alert(err);
    editProfilePopup.showPatchStatus(false);
   });
 }
 
 function editAvatarSubmitHandler(data) {
- console.log(editAvatarPopup);
- console.log(editAvatarPopup.showPatchStatus(true));
  editAvatarPopup.showPatchStatus(true);
  api
   .patchAvatarUser(data.inputAvatar)
@@ -115,16 +108,12 @@ function editAvatarSubmitHandler(data) {
   })
   .then(() => {
    editAvatarPopup.showPatchStatus(false);
-  })
-  .then(() => {
+   editAvatarPopup.close();
    alertEditAvatar.generateAlertBox(`Selamat perubahan foto profil dari ${data.inputAvatar} telah berhasil !!!`);
   })
-  .then(() => {
-   editAvatarPopup.close();
-  })
   .catch((err) => {
+   alert(err);
    editAvatarPopup.showPatchStatus(false);
-   console.log(err);
   });
 }
 
@@ -139,7 +128,7 @@ function handleLikeClick(card, cardId, isLiked) {
    card._likes = data.likes;
   })
   .catch((err) => {
-   console.log(err);
+   alert(err);
   });
 }
 
@@ -153,12 +142,10 @@ function deleteCardSubmitHandler(cardElement, cardId, cardName) {
   .then(() => {
    popupConfirm.close();
    cardElement.remove();
-  })
-  .then(() => {
    alertDeleteCard.generateAlertBox(`Selamat card ${cardName} telah dihapus !!!`);
   })
   .catch((err) => {
-   console.log(err);
+   alert(err);
   });
 }
 
@@ -178,15 +165,11 @@ function addCardSubmitHandler(data) {
   })
   .then(() => {
    addNewCardPopup.showPatchStatus(false);
-  })
-  .then(() => {
+   addNewCardPopup.close();
    alertBoxNewCard.generateAlertBox(`Selamat data berhasil di tambahkan dengan judul ${data.inputJudul}`);
   })
-  .then(() => {
-   addNewCardPopup.close();
-  })
   .catch((err) => {
-   console.log(err);
+   alert(err);
    addNewCardPopup.showPatchStatus(false);
   });
 }
@@ -203,7 +186,7 @@ api
   avatarSelector.src = userInfo.avatar;
  })
  .catch((err) => {
-  console.log(err);
+  alert(err);
  });
 
 sectionProfile.addEventListener('click', (event) => {

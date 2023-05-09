@@ -5,6 +5,8 @@ export default class PopupWithForm extends Popup {
   super(popupSelector);
   this._callback = callback;
   this._formSelector = popupSelector.querySelector('form');
+  this._submitButtons = this._formSelector.querySelectorAll('.form__button');
+  this._buttonValues = Array.from(this._submitButtons).map((button) => button.textContent);
  }
 
  _getInputValues() {
@@ -17,14 +19,14 @@ export default class PopupWithForm extends Popup {
  }
 
  showPatchStatus(status) {
-  const submitButtons = this._formSelector.querySelectorAll('.form__button');
-  submitButtons.forEach((button) => {
+  this._submitButtons.forEach((button, index) => {
    if (status) {
     button.textContent = 'Menyimpan...';
    } else {
-    button.textContent = this._submitButtonValue;
+    button.textContent = this._buttonValues[index];
    }
   });
+
   return this;
  }
 
